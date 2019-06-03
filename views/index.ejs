@@ -1,0 +1,59 @@
+<html>
+<body>
+<meta name="viewport" content="width=device-width">
+<style type="text/css">
+body {
+  font-family: sans-serif;
+}
+.maru {
+  color: green;
+  border-radius: 50%;
+  display: inline-flex;
+  border: 4pix solid green;
+}
+</style>
+<h1>Smart Home 2</h1>
+<a href="/test">test</a>
+<a href="/remotectrl">remotectrl</a>
+<h2>Viera TV</h2>
+<a href="/viera/on">Power On</a>
+<a href="/viera/off">Power Off</a>
+<a href="/viera/ch_up">Channel UP</a>
+<a href="/viera/ch_down">Channel DN</a>
+<a href="/viera/volup">Volume UP</a>
+<a href="/viera/voldown">Volume DN</a>
+<img src="/tvremote.png" usemap="#tvremote1"/>
+<map name="tvremote1">
+<area shape="rect" coords="109,27,197,85" href="/viera/ch_up" alt="ch_up">
+<area shape="rect" coords="109,99,197,156" href="/viera/ch_down" alt="ch_down">
+<area shape="rect" coords="211,27,301,85" href="/viera/volup" alt="volup">
+<area shape="rect" coords="211,99,301,156" href="/viera/voldown" alt="voldown">
+<area shape="circle" coords="48,57,30" href="/viera/on" alt="on">
+<area shape="circle" coords="48,128,30" href="/viera/off" alt="off">
+</map>
+<a class="maru" href="/viera/d1">1</a>
+<a class="maru" href="/viera/d2">2</a>
+<a class="maru" href="/viera/d3">3</a>
+<a class="maru" href="/viera/d4">4</a>
+<a class="maru" href="/viera/d5">5</a>
+<a class="maru" href="/viera/d6">6</a>
+<a class="maru" href="/viera/d7">7</a>
+<a class="maru" href="/viera/d8">8</a>
+<a class="maru" href="/viera/d9">9</a>
+<a class="maru" href="/viera/d0">0</a>
+<h2>Lights</h2>
+<h3>2F Main Room</h3>
+<a href="/light/2fmain/lampcolor">LampColor</a>
+<a href="/light/2fmain/next">Next</a>
+<a href="/light/2fmain/off">Off</a>
+<h3>1F リビング</h3>
+<a href="/light/1fliving/0">Pattern-0</a>
+<a href="/light/1fliving/1">Pattern-1</a>
+<h2>Raspberry Pi Shutdown</h2>
+<a href="/pi/shutdown">Shutdown</a>
+<button class="js-button">
+BBBBB
+</button>
+</body>
+</html>
+

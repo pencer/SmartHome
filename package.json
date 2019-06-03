@@ -1,0 +1,16 @@
+{
+  "name": "SmartHome",
+  "version": "0.1.2",
+  "description": "Smart Home Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {}
+}
