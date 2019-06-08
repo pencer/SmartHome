@@ -5,23 +5,81 @@
 body {
   font-family: sans-serif;
 }
-.maru {
-  color: green;
+div.tvbtn {
+  display: inline-block;
+  width: 2em;
+  height: 1.70em;
+  text-align: center;
+  vertical-align: bottom;
+  background-color: navy;
+  padding-top: 0.30em;
+  border: medium solid dimgray;
   border-radius: 50%;
-  display: inline-flex;
-  border: 4pix solid green;
+  color: white;
+  font-weight: bold;
+  font-size: x-large;
+}
+div.tvbtn.red {
+  background-color: #dd0000;
+  border-radius: 30%;
+}
+div.tvbtn.green {
+  background-color: #009900;
+  border-radius: 30%;
+}
+div.tvbtn.blue {
+  background-color: #005fff;
+  border-radius: 30%;
+}
+div.tvbtn.yellow {
+  background-color: #ffd700;
+  border-radius: 30%;
+}
+div.tvbtn.d {
+  font-style: italic;
+  background-color: white;
+  color: black;
+}
+div.tvbtn.enter {
+  background-color: royalblue;
+  border-radius: 10%;
+}
+div.tvbtn.return {
+  background-color: royalblue;
+  border-radius: 10%;
+}
+div.tvbtn.rec {
+  background-color: red;
+  border-radius: 10%;
+}
+div.ltbtn {
+  display: inline-block;
+  width: 4em;
+  height: 1em;
+  text-align: center;
+  vertical-align: bottom;
+  background-color: navy;
+  //padding: auto auto auto auto;
+  border: medium solid dimgray;
+  border-radius: 20%;
+  color: white;
+  font-weight: bold;
+  font-size: large;
 }
 </style>
-<h1>Smart Home 2</h1>
-<a href="/test">test</a>
-<a href="/remotectrl">remotectrl</a>
+<h1><a href="/remotectrl">Smart Home 2</a></h1>
+<!--
+<a href="/remotectrl">Reload</a>
+-->
 <h2>Viera TV</h2>
+<!--
 <a href="/viera/on">Power On</a>
 <a href="/viera/off">Power Off</a>
 <a href="/viera/ch_up">Channel UP</a>
 <a href="/viera/ch_down">Channel DN</a>
 <a href="/viera/volup">Volume UP</a>
 <a href="/viera/voldown">Volume DN</a>
+-->
 <img src="/tvremote.png" usemap="#tvremote1"/>
 <map name="tvremote1">
 <area shape="rect" coords="109,27,197,85" href="/viera/ch_up" alt="ch_up">
@@ -31,26 +89,40 @@ body {
 <area shape="circle" coords="48,57,30" href="/viera/on" alt="on">
 <area shape="circle" coords="48,128,30" href="/viera/off" alt="off">
 </map>
-<a class="maru" href="/viera/d1">1</a>
-<a class="maru" href="/viera/d2">2</a>
-<a class="maru" href="/viera/d3">3</a>
-<a class="maru" href="/viera/d4">4</a>
-<a class="maru" href="/viera/d5">5</a>
-<a class="maru" href="/viera/d6">6</a>
-<a class="maru" href="/viera/d7">7</a>
-<a class="maru" href="/viera/d8">8</a>
-<a class="maru" href="/viera/d9">9</a>
-<a class="maru" href="/viera/d0">0</a>
+<br>
+<a href="/viera/d1"><div class="tvbtn">1</div></a>
+<a href="/viera/d2"><div class="tvbtn">2</div></a>
+<a href="/viera/d3"><div class="tvbtn">3</div></a>
+<a href="/viera/d4"><div class="tvbtn">4</div></a>
+<a href="/viera/d5"><div class="tvbtn">5</div></a>
+<a href="/viera/d6"><div class="tvbtn">6</div></a>
+<a href="/viera/d7"><div class="tvbtn">7</div></a>
+<a href="/viera/d8"><div class="tvbtn">8</div></a>
+<a href="/viera/d9"><div class="tvbtn">9</div></a>
+<a href="/viera/d0"><div class="tvbtn">0</div></a>
+<a href="/viera/data"><div class="tvbtn d">d</div></a>
+<br>
+<a href="/viera/blue"><div class="tvbtn blue">Blue</div></a>
+<a href="/viera/red"><div class="tvbtn red">Red</div></a>
+<a href="/viera/green"><div class="tvbtn green">Green</div></a>
+<a href="/viera/yellow"><div class="tvbtn yellow">Yellow</div></a>
+<a href="/viera/enter"><div class="tvbtn enter">Enter</div></a>
+<a href="/viera/return"><div class="tvbtn return">Ret</div></a>
+<br>
+<a href="/viera/rec"><div class="tvbtn rec">REC</div></a>
+<a href="/viera/epg"><div class="tvbtn">epg</div></a>
 <h2>Lights</h2>
 <h3>2F Main Room</h3>
-<a href="/light/2fmain/lampcolor">LampColor</a>
-<a href="/light/2fmain/next">Next</a>
-<a href="/light/2fmain/off">Off</a>
+<a href="/light/2fmain/lampcolor"><div class="ltbtn">LampColor</div></a>
+<a href="/light/2fmain/next"><div class="ltbtn">Next</div></a>
+<a href="/light/2fmain/small"><div class="ltbtn">Mame</div></a>
+<a href="/light/2fmain/off"><div class="ltbtn">Off</div></a>
 <h3>1F リビング</h3>
-<a href="/light/1fliving/0">Pattern-0</a>
-<a href="/light/1fliving/1">Pattern-1</a>
+<a href="/light/1fliving/0"><div class="ltbtn">Pattern-0</div></a>
+<a href="/light/1fliving/1"><div class="ltbtn">Pattern-1</div></a>
 <h2>Raspberry Pi Shutdown</h2>
 <a href="/pi/shutdown">Shutdown</a>
+<a href="/test">test</a>
 <button class="js-button">
 BBBBB
 </button>

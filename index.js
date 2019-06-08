@@ -77,6 +77,42 @@ app.get('/viera/d9', function (req, res) {
   exec('/home/pi/bin/vieracontrol.php D9');
   res.render("index", {});
 });
+app.get('/viera/blue', function (req, res) {
+  exec('/home/pi/bin/vieracontrol.php BLUE');
+  res.render("index", {});
+});
+app.get('/viera/red', function (req, res) {
+  exec('/home/pi/bin/vieracontrol.php RED');
+  res.render("index", {});
+});
+app.get('/viera/green', function (req, res) {
+  exec('/home/pi/bin/vieracontrol.php GREEN');
+  res.render("index", {});
+});
+app.get('/viera/yellow', function (req, res) {
+  exec('/home/pi/bin/vieracontrol.php YELLOW');
+  res.render("index", {});
+});
+app.get('/viera/enter', function (req, res) {
+  exec('/home/pi/bin/vieracontrol.php ENTER');
+  res.render("index", {});
+});
+app.get('/viera/return', function (req, res) {
+  exec('/home/pi/bin/vieracontrol.php RETURN');
+  res.render("index", {});
+});
+app.get('/viera/rec', function (req, res) {
+  exec('/home/pi/bin/vieracontrol.php REC');
+  res.render("index", {});
+});
+app.get('/viera/data', function (req, res) {
+  exec('/home/pi/bin/vieracontrol.php DATA');
+  res.render("index", {});
+});
+app.get('/viera/epg', function (req, res) {
+  exec('/home/pi/bin/vieracontrol.php EPG');
+  res.render("index", {});
+});
 // Light
 app.get('/light/2fmain/lampcolor', function (req, res) {
   exec('/home/pi/bin/irc_send.sh light_2fmain_lampcolor');
@@ -84,6 +120,10 @@ app.get('/light/2fmain/lampcolor', function (req, res) {
 });
 app.get('/light/2fmain/next', function (req, res) {
   exec('/home/pi/bin/irc_send.sh light_2fmain_next');
+  res.render("index", {});
+});
+app.get('/light/2fmain/small', function (req, res) {
+  exec('/home/pi/bin/irc_send.sh light_2fmain_lampcolor && sleep 1 && /home/pi/bin/irc_send.sh light_2fmain_next');
   res.render("index", {});
 });
 app.get('/light/2fmain/off', function (req, res) {
