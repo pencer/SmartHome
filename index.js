@@ -13,6 +13,10 @@ app.get('/test', function (req, res) {
 app.get('/remotectrl', function (req, res) {
   res.render("index", {});
 });
+app.get('/viera/weather', function (req, res) {
+  execSync('/home/pi/bin/vieracontrol.php D1 ; sleep 7 ; /home/pi/bin/vieracontrol.php DATA ; sleep 2 ; /home/pi/bin/vieracontrol.php RED ; sleep 3 ; /home/pi/bin/vieracontrol.php ENTER');
+  res.render("index", {});
+});
 app.get('/viera/on', function (req, res) {
   exec('/home/pi/bin/wol_viera.sh');
   res.render("index", {});
@@ -118,6 +122,10 @@ app.get('/light/2fmain/lampcolor', function (req, res) {
   exec('/home/pi/bin/irc_send.sh light_2fmain_lampcolor');
   res.render("index", {});
 });
+app.get('/light/2fmain/neutralwhite', function (req, res) {
+  exec('/home/pi/bin/irc_send.sh light_2fmain_neutralwhite');
+  res.render("index", {});
+});
 app.get('/light/2fmain/next', function (req, res) {
   exec('/home/pi/bin/irc_send.sh light_2fmain_next');
   res.render("index", {});
@@ -137,6 +145,30 @@ app.get('/light/1fliving/0', function (req, res) {
 app.get('/light/1fliving/1', function (req, res) {
   exec('/home/pi/bin/irc_send.sh light_living_1');
   res.render("index", {});
+});
+app.get('/light/1fdining/all', function (req, res) {
+  exec('/home/pi/bin/irc_send.sh light_dining_all');
+  res.render("index", {});
+});
+app.get('/light/1fdining/dimmer', function (req, res) {
+  exec('/home/pi/bin/irc_send.sh light_dining_dimmer');
+  res.render("index", {});
+});
+app.get('/light/1fdining/small', function (req, res) {
+  exec('/home/pi/bin/irc_send.sh light_dining_small');
+  res.render("index", {});
+});
+app.get('/light/1fdining/off', function (req, res) {
+  exec('/home/pi/bin/irc_send.sh light_dining_off');
+  res.render("index", {});
+});
+app.get('/light/1fdining/next', function (req, res) {
+  exec('/home/pi/bin/irc_send.sh light_dining_next');
+  res.render("index", {});
+});
+app.get('/pi/aplay', function (req, res) {
+  exec('aplay aplay -D plughw:1,0 /home/pi/sounds/shichijihanninarimasita.wav');
+  res.redirect('/');
 });
 app.get('/pi/shutdown', function (req, res) {
   exec('sudo shutdown -h now');
