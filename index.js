@@ -184,31 +184,31 @@ app.get('/light/1fdining/next', function (req, res) {
 });
 app.get('/ac/1fac/stop', function (req, res) {
   exec('/home/pi/bin/ac1.sh stop');
-  res.render("index", {});
+  res.redirect('/');
 });
 app.get('/ac/1fac/c28_0', function (req, res) {
   exec('/home/pi/bin/ac1.sh c28 0');
-  res.render("index", {});
+  res.redirect('/');
 });
 app.get('/ac/1fac/c28_2', function (req, res) {
   exec('/home/pi/bin/ac1.sh c28 2');
-  res.render("index", {});
+  res.redirect('/');
 });
 app.get('/ac/1fac/c28_auto', function (req, res) {
   exec('/home/pi/bin/ac1.sh c28 auto');
-  res.render("index", {});
+  res.redirect('/');
 });
 app.get('/ac/1fac/c27_0', function (req, res) {
   exec('/home/pi/bin/ac1.sh c27 0');
-  res.render("index", {});
+  res.redirect('/');
 });
 app.get('/ac/1fac/c27_2', function (req, res) {
   exec('/home/pi/bin/ac1.sh c27 2');
-  res.render("index", {});
+  res.redirect('/');
 });
 app.get('/ac/1fac/c27_auto', function (req, res) {
   exec('/home/pi/bin/ac1.sh c27 auto');
-  res.render("index", {});
+  res.redirect('/');
 });
 app.get('/pi/aplay', function (req, res) {
   exec('aplay aplay -D plughw:1,0 /home/pi/sounds/shichijihanninarimasita.wav');
