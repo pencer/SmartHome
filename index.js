@@ -109,12 +109,28 @@ app.get('/viera/rec', function (req, res) {
   exec('/home/pi/bin/vieracontrol.php REC');
   res.render("index", {});
 });
+app.get('/viera/stop', function (req, res) {
+  exec('/home/pi/bin/vieracontrol.php STOP');
+  res.render("index", {});
+});
+app.get('/viera/pause', function (req, res) {
+  exec('/home/pi/bin/vieracontrol.php PAUSE');
+  res.render("index", {});
+});
+app.get('/viera/reclist', function (req, res) {
+  exec('/home/pi/bin/vieracontrol.php RECLIST');
+  res.render("index", {});
+});
 app.get('/viera/data', function (req, res) {
   exec('/home/pi/bin/vieracontrol.php DATA');
   res.render("index", {});
 });
 app.get('/viera/epg', function (req, res) {
   exec('/home/pi/bin/vieracontrol.php EPG');
+  res.render("index", {});
+});
+app.get('/viera/chg_input', function (req, res) {
+  exec('/home/pi/bin/vieracontrol.php CHG_INPUT');
   res.render("index", {});
 });
 // Light
@@ -166,8 +182,56 @@ app.get('/light/1fdining/next', function (req, res) {
   exec('/home/pi/bin/irc_send.sh light_dining_next');
   res.render("index", {});
 });
+app.get('/ac/1fac/stop', function (req, res) {
+  exec('/home/pi/bin/ac1.sh stop');
+  res.render("index", {});
+});
+app.get('/ac/1fac/c28_0', function (req, res) {
+  exec('/home/pi/bin/ac1.sh c28 0');
+  res.render("index", {});
+});
+app.get('/ac/1fac/c28_2', function (req, res) {
+  exec('/home/pi/bin/ac1.sh c28 2');
+  res.render("index", {});
+});
+app.get('/ac/1fac/c28_auto', function (req, res) {
+  exec('/home/pi/bin/ac1.sh c28 auto');
+  res.render("index", {});
+});
+app.get('/ac/1fac/c27_0', function (req, res) {
+  exec('/home/pi/bin/ac1.sh c27 0');
+  res.render("index", {});
+});
+app.get('/ac/1fac/c27_2', function (req, res) {
+  exec('/home/pi/bin/ac1.sh c27 2');
+  res.render("index", {});
+});
+app.get('/ac/1fac/c27_auto', function (req, res) {
+  exec('/home/pi/bin/ac1.sh c27 auto');
+  res.render("index", {});
+});
 app.get('/pi/aplay', function (req, res) {
   exec('aplay aplay -D plughw:1,0 /home/pi/sounds/shichijihanninarimasita.wav');
+  res.redirect('/');
+});
+app.get('/viera/tv_autooff_enable', function (req, res) {
+  exec('/home/pi/bin/set_cron.sh tv_autooff enable');
+  res.redirect('/');
+});
+app.get('/viera/tv_autooff_disable', function (req, res) {
+  exec('/home/pi/bin/set_cron.sh tv_autooff disable');
+  res.redirect('/');
+});
+app.get('/businfo/check/fujiyamashita/higashitotsukaekihigashiguchi', function (req, res) {
+  exec('/home/pi/kanachu/BusInfo/kanachu.py 12117 12101');
+  res.redirect('/');
+});
+app.get('/businfo/check/kamiyabe/totsukaekihigashiguchi', function (req, res) {
+  exec('/home/pi/kanachu/BusInfo/kanachu.py 12203 12001');
+  res.redirect('/');
+});
+app.get('/businfo/check/fujiyamashita/akibasansaro', function (req, res) {
+  exec('/home/pi/kanachu/BusInfo/kanachu.py 12117 12115');
   res.redirect('/');
 });
 app.get('/pi/shutdown', function (req, res) {
