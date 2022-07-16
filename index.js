@@ -134,6 +134,22 @@ app.get('/viera/chg_input', function (req, res) {
   res.render("index", {});
 });
 // Light
+app.get('/light/koizumi/full', function (req, res) {
+  exec('/home/pi/work/rpz-ir-sensor/cgir-master/cgirtool.py -c /home/pi/work/rpz-ir-sensor/cgir-master/codes.json send ir_light_koizumi_full');
+  res.render("index", {});
+});
+app.get('/light/koizumi/dimmer', function (req, res) {
+  exec('/home/pi/work/rpz-ir-sensor/cgir-master/cgirtool.py -c /home/pi/work/rpz-ir-sensor/cgir-master/codes.json send ir_light_koizumi_dimmer');
+  res.render("index", {});
+});
+app.get('/light/koizumi/small', function (req, res) {
+  exec('/home/pi/work/rpz-ir-sensor/cgir-master/cgirtool.py -c /home/pi/work/rpz-ir-sensor/cgir-master/codes.json send ir_light_koizumi_small');
+  res.render("index", {});
+});
+app.get('/light/koizumi/off', function (req, res) {
+  exec('/home/pi/work/rpz-ir-sensor/cgir-master/cgirtool.py -c /home/pi/work/rpz-ir-sensor/cgir-master/codes.json send ir_light_koizumi_off');
+  res.render("index", {});
+});
 app.get('/light/2fmain/lampcolor', function (req, res) {
   exec('/home/pi/bin/irc_send.sh light_2fmain_lampcolor');
   res.render("index", {});
@@ -208,6 +224,10 @@ app.get('/ac/1fac/c27_2', function (req, res) {
 });
 app.get('/ac/1fac/c27_auto', function (req, res) {
   exec('/home/pi/bin/ac1.sh c27 auto');
+  res.redirect('/');
+});
+app.get('/ac/daikin/stop', function (req, res) {
+  exec('/home/pi/work/rpz-ir-sensor/cgir-master/cgirtool.py -c /home/pi/work/rpz-ir-sensor/cgir-master/codes.json send ir_daikin_ac_stop');
   res.redirect('/');
 });
 app.get('/pi/aplay', function (req, res) {
