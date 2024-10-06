@@ -13,226 +13,81 @@ app.get('/test', function (req, res) {
 app.get('/remotectrl', function (req, res) {
   res.render("index", {});
 });
-app.get('/viera/weather', function (req, res) {
-  execSync('/home/pi/bin/vieracontrol.php D1 ; sleep 7 ; /home/pi/bin/vieracontrol.php DATA ; sleep 2 ; /home/pi/bin/vieracontrol.php RED ; sleep 3 ; /home/pi/bin/vieracontrol.php ENTER');
+app.get('/childroom1/bell', function (req, res) {
+  exec('/home/pi/work/speaker/bell.py');
   res.render("index", {});
 });
-app.get('/viera/on', function (req, res) {
-  exec('/home/pi/bin/wol_viera.sh');
+app.get('/childroom1/bell1', function (req, res) {
+  exec('/home/pi/work/speaker/bell.py -m 1');
   res.render("index", {});
 });
-app.get('/viera/off', function (req, res) {
-  exec('/home/pi/bin/vieracontrol.php POWER');
+app.get('/childroom1/bell2', function (req, res) {
+  exec('/home/pi/work/speaker/bell.py -m 2');
   res.render("index", {});
 });
-app.get('/viera/volup', function (req, res) {
-  exec('/home/pi/bin/vieracontrol.php VOLUP');
+app.get('/childroom1/bell3', function (req, res) {
+  exec('/home/pi/work/speaker/bell.py -m 3');
   res.render("index", {});
 });
-app.get('/viera/voldown', function (req, res) {
-  exec('/home/pi/bin/vieracontrol.php VOLDOWN');
+app.get('/childroom1/bell4', function (req, res) {
+  exec('/home/pi/work/speaker/bell.py -m 4');
   res.render("index", {});
 });
-app.get('/viera/ch_up', function (req, res) {
-  exec('/home/pi/bin/vieracontrol.php CH_UP');
+app.get('/childroom1/bell5', function (req, res) {
+  exec('/home/pi/work/speaker/bell.py -m 5');
   res.render("index", {});
 });
-app.get('/viera/ch_down', function (req, res) {
-  exec('/home/pi/bin/vieracontrol.php CH_DOWN');
+app.get('/childroom1/bell6', function (req, res) {
+  exec('/home/pi/work/speaker/bell.py -m 6');
   res.render("index", {});
 });
-app.get('/viera/d0', function (req, res) {
-  exec('/home/pi/bin/vieracontrol.php D0');
+app.get('/childroom1/bell7', function (req, res) {
+  exec('/home/pi/work/speaker/bell.py -m 7');
   res.render("index", {});
 });
-app.get('/viera/d1', function (req, res) {
-  exec('/home/pi/bin/vieracontrol.php D1');
+app.get('/childroom1/bell8', function (req, res) {
+  exec('/home/pi/work/speaker/bell.py -m 8');
   res.render("index", {});
 });
-app.get('/viera/d2', function (req, res) {
-  exec('/home/pi/bin/vieracontrol.php D2');
+app.get('/childroom1/bell9', function (req, res) {
+  exec('/home/pi/work/speaker/bell.py -m 9');
   res.render("index", {});
 });
-app.get('/viera/d3', function (req, res) {
-  exec('/home/pi/bin/vieracontrol.php D3');
+app.get('/childroom1/bell10', function (req, res) {
+  exec('/home/pi/work/speaker/bell.py -m 10');
   res.render("index", {});
 });
-app.get('/viera/d4', function (req, res) {
-  exec('/home/pi/bin/vieracontrol.php D4');
+app.get('/childroom1/bell11', function (req, res) {
+  exec('/home/pi/work/speaker/bell.py -m 11');
   res.render("index", {});
 });
-app.get('/viera/d5', function (req, res) {
-  exec('/home/pi/bin/vieracontrol.php D5');
+app.get('/childroom1/bell12', function (req, res) {
+  exec('/home/pi/work/speaker/bell.py -m 12');
   res.render("index", {});
 });
-app.get('/viera/d6', function (req, res) {
-  exec('/home/pi/bin/vieracontrol.php D6');
+app.get('/childroom1/bell13', function (req, res) {
+  exec('/home/pi/work/speaker/bell.py -m 13');
   res.render("index", {});
 });
-app.get('/viera/d7', function (req, res) {
-  exec('/home/pi/bin/vieracontrol.php D7');
+app.get('/childroom1/bell14', function (req, res) {
+  exec('/home/pi/work/speaker/bell.py -m 14');
   res.render("index", {});
 });
-app.get('/viera/d8', function (req, res) {
-  exec('/home/pi/bin/vieracontrol.php D8');
+app.get('/childroom1/bell15', function (req, res) {
+  exec('/home/pi/work/speaker/bell.py -m 15');
   res.render("index", {});
 });
-app.get('/viera/d9', function (req, res) {
-  exec('/home/pi/bin/vieracontrol.php D9');
+app.get('/childroom1/bell16', function (req, res) {
+  exec('/home/pi/work/speaker/bell.py -m 16');
   res.render("index", {});
 });
-app.get('/viera/blue', function (req, res) {
-  exec('/home/pi/bin/vieracontrol.php BLUE');
+app.get('/light/next', function (req, res) {
+  exec('python3 /home/pi/work/ir/irrp.py -p -g13 -f /home/pi/work/ir/childroom1 lampch1')
   res.render("index", {});
 });
-app.get('/viera/red', function (req, res) {
-  exec('/home/pi/bin/vieracontrol.php RED');
+app.get('/ac/off', function (req, res) {
+  exec('python3 /home/pi/work/ir/irrp.py -p -g13 -f /home/pi/work/ir/childroom1 acoff')
   res.render("index", {});
-});
-app.get('/viera/green', function (req, res) {
-  exec('/home/pi/bin/vieracontrol.php GREEN');
-  res.render("index", {});
-});
-app.get('/viera/yellow', function (req, res) {
-  exec('/home/pi/bin/vieracontrol.php YELLOW');
-  res.render("index", {});
-});
-app.get('/viera/enter', function (req, res) {
-  exec('/home/pi/bin/vieracontrol.php ENTER');
-  res.render("index", {});
-});
-app.get('/viera/return', function (req, res) {
-  exec('/home/pi/bin/vieracontrol.php RETURN');
-  res.render("index", {});
-});
-app.get('/viera/rec', function (req, res) {
-  exec('/home/pi/bin/vieracontrol.php REC');
-  res.render("index", {});
-});
-app.get('/viera/stop', function (req, res) {
-  exec('/home/pi/bin/vieracontrol.php STOP');
-  res.render("index", {});
-});
-app.get('/viera/pause', function (req, res) {
-  exec('/home/pi/bin/vieracontrol.php PAUSE');
-  res.render("index", {});
-});
-app.get('/viera/reclist', function (req, res) {
-  exec('/home/pi/bin/vieracontrol.php RECLIST');
-  res.render("index", {});
-});
-app.get('/viera/data', function (req, res) {
-  exec('/home/pi/bin/vieracontrol.php DATA');
-  res.render("index", {});
-});
-app.get('/viera/epg', function (req, res) {
-  exec('/home/pi/bin/vieracontrol.php EPG');
-  res.render("index", {});
-});
-app.get('/viera/chg_input', function (req, res) {
-  exec('/home/pi/bin/vieracontrol.php CHG_INPUT');
-  res.render("index", {});
-});
-// Light
-app.get('/light/2fmain/lampcolor', function (req, res) {
-  exec('/home/pi/bin/irc_send.sh light_2fmain_lampcolor');
-  res.render("index", {});
-});
-app.get('/light/2fmain/neutralwhite', function (req, res) {
-  exec('/home/pi/bin/irc_send.sh light_2fmain_neutralwhite');
-  res.render("index", {});
-});
-app.get('/light/2fmain/next', function (req, res) {
-  exec('/home/pi/bin/irc_send.sh light_2fmain_next');
-  res.render("index", {});
-});
-app.get('/light/2fmain/small', function (req, res) {
-  exec('/home/pi/bin/irc_send.sh light_2fmain_lampcolor && sleep 1 && /home/pi/bin/irc_send.sh light_2fmain_next');
-  res.render("index", {});
-});
-app.get('/light/2fmain/off', function (req, res) {
-  exec('/home/pi/bin/irc_send.sh light_2fmain_off');
-  res.render("index", {});
-});
-app.get('/light/1fliving/0', function (req, res) {
-  exec('/home/pi/bin/irc_send.sh light_living_0');
-  res.render("index", {});
-});
-app.get('/light/1fliving/1', function (req, res) {
-  exec('/home/pi/bin/irc_send.sh light_living_1');
-  res.render("index", {});
-});
-app.get('/light/1fdining/all', function (req, res) {
-  exec('/home/pi/bin/irc_send.sh light_dining_all');
-  res.render("index", {});
-});
-app.get('/light/1fdining/dimmer', function (req, res) {
-  exec('/home/pi/bin/irc_send.sh light_dining_dimmer');
-  res.render("index", {});
-});
-app.get('/light/1fdining/small', function (req, res) {
-  exec('/home/pi/bin/irc_send.sh light_dining_small');
-  res.render("index", {});
-});
-app.get('/light/1fdining/off', function (req, res) {
-  exec('/home/pi/bin/irc_send.sh light_dining_off');
-  res.render("index", {});
-});
-app.get('/light/1fdining/next', function (req, res) {
-  exec('/home/pi/bin/irc_send.sh light_dining_next');
-  res.render("index", {});
-});
-app.get('/ac/1fac/stop', function (req, res) {
-  exec('/home/pi/bin/ac1.sh stop');
-  res.redirect('/');
-});
-app.get('/ac/1fac/c28_0', function (req, res) {
-  exec('/home/pi/bin/ac1.sh c28 0');
-  res.redirect('/');
-});
-app.get('/ac/1fac/c28_2', function (req, res) {
-  exec('/home/pi/bin/ac1.sh c28 2');
-  res.redirect('/');
-});
-app.get('/ac/1fac/c28_auto', function (req, res) {
-  exec('/home/pi/bin/ac1.sh c28 auto');
-  res.redirect('/');
-});
-app.get('/ac/1fac/c27_0', function (req, res) {
-  exec('/home/pi/bin/ac1.sh c27 0');
-  res.redirect('/');
-});
-app.get('/ac/1fac/c27_2', function (req, res) {
-  exec('/home/pi/bin/ac1.sh c27 2');
-  res.redirect('/');
-});
-app.get('/ac/1fac/c27_auto', function (req, res) {
-  exec('/home/pi/bin/ac1.sh c27 auto');
-  res.redirect('/');
-});
-app.get('/pi/aplay', function (req, res) {
-  exec('aplay aplay -D plughw:1,0 /home/pi/sounds/shichijihanninarimasita.wav');
-  res.redirect('/');
-});
-app.get('/viera/tv_autooff_enable', function (req, res) {
-  exec('/home/pi/bin/set_cron.sh tv_autooff enable');
-  res.redirect('/');
-});
-app.get('/viera/tv_autooff_disable', function (req, res) {
-  exec('/home/pi/bin/set_cron.sh tv_autooff disable');
-  res.redirect('/');
-});
-app.get('/businfo/check/fujiyamashita/higashitotsukaekihigashiguchi', function (req, res) {
-  exec('/home/pi/kanachu/BusInfo/kanachu.py 12117 12101');
-  res.redirect('/');
-});
-app.get('/businfo/check/kamiyabe/totsukaekihigashiguchi', function (req, res) {
-  exec('/home/pi/kanachu/BusInfo/kanachu.py 12203 12001');
-  res.redirect('/');
-});
-app.get('/businfo/check/fujiyamashita/akibasansaro', function (req, res) {
-  exec('/home/pi/kanachu/BusInfo/kanachu.py 12117 12115');
-  res.redirect('/');
 });
 app.get('/pi/shutdown', function (req, res) {
   exec('sudo shutdown -h now');
