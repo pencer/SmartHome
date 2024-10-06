@@ -182,6 +182,57 @@ app.get('/light/1fdining/next', function (req, res) {
   exec('/home/pi/bin/irc_send.sh light_dining_next');
   res.render("index", {});
 });
+// Fan/Iris
+app.get('/fan/iris/power', function (req, res) {
+  exec('/home/pi/work/rpz-ir-sensor/cgir-master/cgirtool.py send -c /home/pi/work/rpz-ir-sensor/cgir-master/codes.json ir_fan_iris_power')
+  res.render("index", {});
+});
+app.get('/fan/iris/up', function (req, res) {
+  exec('/home/pi/work/rpz-ir-sensor/cgir-master/cgirtool.py send -c /home/pi/work/rpz-ir-sensor/cgir-master/codes.json ir_fan_iris_up')
+  res.render("index", {});
+});
+app.get('/fan/iris/down', function (req, res) {
+  exec('/home/pi/work/rpz-ir-sensor/cgir-master/cgirtool.py send -c /home/pi/work/rpz-ir-sensor/cgir-master/codes.json ir_fan_iris_down')
+  res.render("index", {});
+});
+app.get('/fan/iris/swinglr', function (req, res) {
+  exec('/home/pi/work/rpz-ir-sensor/cgir-master/cgirtool.py send -c /home/pi/work/rpz-ir-sensor/cgir-master/codes.json ir_fan_iris_swinglr')
+  res.render("index", {});
+});
+app.get('/fan/iris/swingud', function (req, res) {
+  exec('/home/pi/work/rpz-ir-sensor/cgir-master/cgirtool.py send -c /home/pi/work/rpz-ir-sensor/cgir-master/codes.json ir_fan_iris_swingud')
+  res.render("index", {});
+});
+app.get('/fan/iris/mode_cont', function (req, res) {
+  exec('/home/pi/work/rpz-ir-sensor/cgir-master/cgirtool.py send -c /home/pi/work/rpz-ir-sensor/cgir-master/codes.json ir_fan_iris_mode_cont')
+  res.render("index", {});
+});
+app.get('/fan/iris/mode_rithm', function (req, res) {
+  exec('/home/pi/work/rpz-ir-sensor/cgir-master/cgirtool.py send -c /home/pi/work/rpz-ir-sensor/cgir-master/codes.json ir_fan_iris_mode_rithm')
+  res.render("index", {});
+});
+app.get('/fan/iris/mode_dry', function (req, res) {
+  exec('/home/pi/work/rpz-ir-sensor/cgir-master/cgirtool.py send -c /home/pi/work/rpz-ir-sensor/cgir-master/codes.json ir_fan_iris_mode_dry')
+  res.render("index", {});
+});
+// Light/Koizumi
+app.get('/light/koizumi/full', function (req, res) {
+  exec('/home/pi/work/rpz-ir-sensor/cgir-master/cgirtool.py send -c /home/pi/work/rpz-ir-sensor/cgir-master/codes.json ir_light_koizumi_full')
+  res.render("index", {});
+});
+app.get('/light/koizumi/dimmer', function (req, res) {
+  exec('/home/pi/work/rpz-ir-sensor/cgir-master/cgirtool.py send -c /home/pi/work/rpz-ir-sensor/cgir-master/codes.json ir_light_koizumi_dimmer')
+  res.render("index", {});
+});
+app.get('/light/koizumi/small', function (req, res) {
+  exec('/home/pi/work/rpz-ir-sensor/cgir-master/cgirtool.py send -c /home/pi/work/rpz-ir-sensor/cgir-master/codes.json ir_light_koizumi_small')
+  res.render("index", {});
+});
+app.get('/light/koizumi/off', function (req, res) {
+  exec('/home/pi/work/rpz-ir-sensor/cgir-master/cgirtool.py send -c /home/pi/work/rpz-ir-sensor/cgir-master/codes.json ir_light_koizumi_off')
+  res.render("index", {});
+});
+//
 app.get('/ac/1fac/stop', function (req, res) {
   exec('/home/pi/bin/ac1.sh stop');
   res.redirect('/');
