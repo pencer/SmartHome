@@ -133,25 +133,25 @@ app.get('/viera/chg_input', function (req, res) {
   exec('/home/pi/bin/vieracontrol.php CHG_INPUT');
   res.render("index", {});
 });
-// Light
-app.get('/light/2fmain/lampcolor', function (req, res) {
-  exec('/home/pi/bin/irc_send.sh light_2fmain_lampcolor');
+// Toshiba Light
+app.get('/light/toshiba/lampcolor', function (req, res) {
+  exec('/home/pi/work/rpz-ir-sensor/cgir-master/cgirtool.py send -c /home/pi/work/rpz-ir-sensor/cgir-master/codes.json ir_light_2fmain_lampcolor');
   res.render("index", {});
 });
-app.get('/light/2fmain/neutralwhite', function (req, res) {
-  exec('/home/pi/bin/irc_send.sh light_2fmain_neutralwhite');
+app.get('/light/toshiba/neutralwhite', function (req, res) {
+  exec('/home/pi/work/rpz-ir-sensor/cgir-master/cgirtool.py send -c /home/pi/work/rpz-ir-sensor/cgir-master/codes.json ir_light_2fmain_neutralwhite');
   res.render("index", {});
 });
-app.get('/light/2fmain/next', function (req, res) {
-  exec('/home/pi/bin/irc_send.sh light_2fmain_next');
+app.get('/light/toshiba/next', function (req, res) {
+  exec('/home/pi/work/rpz-ir-sensor/cgir-master/cgirtool.py send -c /home/pi/work/rpz-ir-sensor/cgir-master/codes.json ir_light_2fmain_next');
   res.render("index", {});
 });
-app.get('/light/2fmain/small', function (req, res) {
-  exec('/home/pi/bin/irc_send.sh light_2fmain_lampcolor && sleep 1 && /home/pi/bin/irc_send.sh light_2fmain_next');
+app.get('/light/toshiba/small', function (req, res) {
+  exec('/home/pi/work/rpz-ir-sensor/cgir-master/cgirtool.py send -c /home/pi/work/rpz-ir-sensor/cgir-master/codes.json ir_light_2fmain_lampcolor && sleep 1 && /home/pi/work/rpz-ir-sensor/cgir-master/cgirtool.py send -c /home/pi/work/rpz-ir-sensor/cgir-master/codes.json ir_light_2fmain_next');
   res.render("index", {});
 });
-app.get('/light/2fmain/off', function (req, res) {
-  exec('/home/pi/bin/irc_send.sh light_2fmain_off');
+app.get('/light/toshiba/off', function (req, res) {
+  exec('/home/pi/work/rpz-ir-sensor/cgir-master/cgirtool.py send -c /home/pi/work/rpz-ir-sensor/cgir-master/codes.json ir_light_2fmain_off');
   res.render("index", {});
 });
 app.get('/light/1fliving/0', function (req, res) {
