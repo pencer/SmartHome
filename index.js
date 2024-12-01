@@ -133,6 +133,23 @@ app.get('/viera/chg_input', function (req, res) {
   exec('/home/pi/bin/vieracontrol.php CHG_INPUT');
   res.render("index", {});
 });
+// NEC Light
+app.get('/light/nec/full', function (req, res) {
+  exec('/home/pi/work/rpz-ir-sensor/cgir-master/cgirtool.py send -c /home/pi/work/rpz-ir-sensor/cgir-master/codes.json ir_light_nec_full');
+  res.render("index", {});
+});
+app.get('/light/nec/dimmer', function (req, res) {
+  exec('/home/pi/work/rpz-ir-sensor/cgir-master/cgirtool.py send -c /home/pi/work/rpz-ir-sensor/cgir-master/codes.json ir_light_nec_dimmer');
+  res.render("index", {});
+});
+app.get('/light/nec/small', function (req, res) {
+  exec('/home/pi/work/rpz-ir-sensor/cgir-master/cgirtool.py send -c /home/pi/work/rpz-ir-sensor/cgir-master/codes.json ir_light_nec_small');
+  res.render("index", {});
+});
+app.get('/light/nec/off', function (req, res) {
+  exec('/home/pi/work/rpz-ir-sensor/cgir-master/cgirtool.py send -c /home/pi/work/rpz-ir-sensor/cgir-master/codes.json ir_light_nec_off');
+  res.render("index", {});
+});
 // Toshiba Light
 app.get('/light/toshiba/lampcolor', function (req, res) {
   exec('/home/pi/work/rpz-ir-sensor/cgir-master/cgirtool.py send -c /home/pi/work/rpz-ir-sensor/cgir-master/codes.json ir_light_2fmain_lampcolor');
