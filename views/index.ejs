@@ -55,7 +55,7 @@ div.tvbtn.rec {
 div.ltbtn {
   display: inline-block;
   width: 4em;
-  height: 1em;
+  height: 1.5em;
   text-align: center;
   vertical-align: bottom;
   background-color: navy;
@@ -126,6 +126,19 @@ div.ltbtn {
 <br>
 TV Auto-Off: <a href="/viera/tv_autooff_enable">Enable</a>
 <a href="/viera/tv_autooff_disable">Disable</a>
+<h2>Childroom1</h2>
+<a href="/childroom1/bell"><div class="ltbtn">Bell</div></a>
+<h2>Soundbar</h2>
+<a href="/soundbar/power"><div class="ltbtn">Power</div></a>
+<a href="/soundbar/volup"><div class="ltbtn">VolUp</div></a>
+<a href="/soundbar/voldown"><div class="ltbtn">VolDown</div></a>
+<a href="/soundbar/bluetooth"><div class="ltbtn">Bluetooth</div></a>
+<a href="/soundbar/pairing"><div class="ltbtn">Pairing</div></a>
+<h2>Curtain</h2>
+<a href="/curtain/60/open"><div class="ltbtn">Open</div></a>
+<a href="/curtain/60/close"><div class="ltbtn">Close</div></a>
+<h2>Temparature</h2>
+<a href="http://192.168.1.23/temp.html">Temparature</a>
 <h2>Lights</h2>
 <h3>2F Main Room</h3>
 <a href="/light/2fmain/lampcolor"><div class="ltbtn">LampColor</div></a>
@@ -143,6 +156,8 @@ TV Auto-Off: <a href="/viera/tv_autooff_enable">Enable</a>
 <h3>1F リビング</h3>
 <a href="/light/1fliving/0"><div class="ltbtn">Pattern-0</div></a>
 <a href="/light/1fliving/1"><div class="ltbtn">Pattern-1</div></a>
+<a href="/light/1fliving/all"><div class="ltbtn">All</div></a>
+<a href="/light/1fliving/off"><div class="ltbtn">Off</div></a>
 <h3>1Fエアコン</h3>
 <a href="/ac/1fac/stop"><div class="ltbtn">停止</div></a>
 <a href="/ac/1fac/c28_auto"><div class="ltbtn">冷28自動</div></a>
@@ -151,10 +166,21 @@ TV Auto-Off: <a href="/viera/tv_autooff_enable">Enable</a>
 <a href="/ac/1fac/c27_auto"><div class="ltbtn">冷27自動</div></a>
 <a href="/ac/1fac/c27_0"><div class="ltbtn">冷27 0</div></a>
 <a href="/ac/1fac/c27_2"><div class="ltbtn">冷27 2</div></a>
+<h3>扇風機3連</h3>
+<a href="/fan/koizumi/power"><div class="ltbtn">Power</div></a>
+<a href="/fan/koizumi/top"><div class="ltbtn">Top</div></a>
+<a href="/fan/koizumi/middle"><div class="ltbtn">Middle</div></a>
+<a href="/fan/koizumi/bottom"><div class="ltbtn">Bottom</div></a>
+<a href="/fan/koizumi/swing"><div class="ltbtn">Swing</div></a>
+<h2>Library</h2>
+<a href="/library/checklibrarysilent"><div class="ltbtn">更新</div></a>
+<a href="/library/checklibrary"><div class="ltbtn">音声付</div></a>
+<a href="http://raspberrypi.local/library.html">View Library Status Page</a>
 <h2>Raspberry Pi Shutdown</h2>
 <a href="/pi/aplay">aplay</a>
 <a href="/pi/shutdown">Shutdown</a>
 <a href="/test">test</a>
+<a href="http://raspberrypi.local/"><div class="ltbtn">home</div></a>
 <button class="js-button">
 BBBBB
 </button>

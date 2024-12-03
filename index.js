@@ -133,6 +133,36 @@ app.get('/viera/chg_input', function (req, res) {
   exec('/home/pi/bin/vieracontrol.php CHG_INPUT');
   res.render("index", {});
 });
+// Soundbar
+app.get('/soundbar/power', function (req, res) {
+  exec('/home/pi/bin/irc_send.sh soundbar_power');
+  res.render("index", {});
+});
+app.get('/soundbar/bluetooth', function (req, res) {
+  exec('/home/pi/bin/irc_send.sh soundbar_bluetooth');
+  res.render("index", {});
+});
+app.get('/soundbar/pairing', function (req, res) {
+  exec('/home/pi/bin/irc_send.sh soundbar_bluetooth 80');
+  res.render("index", {});
+});
+app.get('/soundbar/volup', function (req, res) {
+  exec('/home/pi/bin/irc_send.sh soundbar_volup');
+  res.render("index", {});
+});
+app.get('/soundbar/voldown', function (req, res) {
+  exec('/home/pi/bin/irc_send.sh soundbar_voldown');
+  res.render("index", {});
+});
+// Curtain
+app.get('/curtain/60/open', function (req, res) {
+  exec('/home/pi/bin/switchbot_60.sh open');
+  res.render("index", {});
+});
+app.get('/curtain/60/close', function (req, res) {
+  exec('/home/pi/bin/switchbot_60.sh close');
+  res.render("index", {});
+});
 // Light
 app.get('/light/2fmain/lampcolor', function (req, res) {
   exec('/home/pi/bin/irc_send.sh light_2fmain_lampcolor');
@@ -160,6 +190,19 @@ app.get('/light/1fliving/0', function (req, res) {
 });
 app.get('/light/1fliving/1', function (req, res) {
   exec('/home/pi/bin/irc_send.sh light_living_1');
+  res.render("index", {});
+});
+app.get('/light/1fliving/off', function (req, res) {
+  exec('/home/pi/bin/irc_send.sh light_living_off');
+  res.render("index", {});
+});
+app.get('/light/1fliving/all', function (req, res) {
+  exec('/home/pi/bin/irc_send.sh light_living_all');
+  res.render("index", {});
+});
+app.get('/childroom1/bell', function (req, res) {
+  //exec('wget http://pumpkinpi.local:3001/childroom1/bell -O /dev/null -o /dev/null');
+  exec('wget http://192.168.1.3:3001/childroom1/bell -O /dev/null -o /dev/null');
   res.render("index", {});
 });
 app.get('/light/1fdining/all', function (req, res) {
@@ -210,6 +253,26 @@ app.get('/ac/1fac/c27_auto', function (req, res) {
   exec('/home/pi/bin/ac1.sh c27 auto');
   res.redirect('/');
 });
+app.get('/fan/koizumi/power', function (req, res) {
+  exec('/home/pi/bin/irc_send.sh fan_koizumi_power');
+  res.redirect('/');
+});
+app.get('/fan/koizumi/top', function (req, res) {
+  exec('/home/pi/bin/irc_send.sh fan_koizumi_top');
+  res.redirect('/');
+});
+app.get('/fan/koizumi/middle', function (req, res) {
+  exec('/home/pi/bin/irc_send.sh fan_koizumi_middle');
+  res.redirect('/');
+});
+app.get('/fan/koizumi/bottom', function (req, res) {
+  exec('/home/pi/bin/irc_send.sh fan_koizumi_bottom');
+  res.redirect('/');
+});
+app.get('/fan/koizumi/swing', function (req, res) {
+  exec('/home/pi/bin/irc_send.sh fan_koizumi_swing');
+  res.redirect('/');
+});
 app.get('/pi/aplay', function (req, res) {
   exec('aplay aplay -D plughw:1,0 /home/pi/sounds/shichijihanninarimasita.wav');
   res.redirect('/');
@@ -232,6 +295,14 @@ app.get('/businfo/check/kamiyabe/totsukaekihigashiguchi', function (req, res) {
 });
 app.get('/businfo/check/fujiyamashita/akibasansaro', function (req, res) {
   exec('/home/pi/kanachu/BusInfo/kanachu.py 12117 12115');
+  res.redirect('/');
+});
+app.get('/library/checklibrarysilent', function (req, res) {
+  exec('/home/pi/kanachu/BusInfo/checklibrary.py -o /home/pi/Desktop/library.html -s');
+  res.redirect('/');
+});
+app.get('/library/checklibrary', function (req, res) {
+  exec('/home/pi/kanachu/BusInfo/checklibrary.py -o /home/pi/Desktop/library.html');
   res.redirect('/');
 });
 app.get('/pi/shutdown', function (req, res) {
