@@ -154,35 +154,35 @@ app.get('/viera/chg_input', function (req, res) {
 });
 // Music
 app.get('/music/radio/radio', function (req, res) {
-  exec('/home/pi/work/radio/radio.sh');
+  exec('USE_MPG123=1 BTDEVICE=" " /home/pi/work/radio/radio.sh');
   res.render("index", {stat_msg: ""});
 });
 app.get('/music/radio/radio0', function (req, res) {
-  exec('/home/pi/work/radio/radio.sh 0');
+  exec('USE_MPG123=1 BTDEVICE=" " /home/pi/work/radio/radio.sh 0');
   res.render("index", {stat_msg: ""});
 });
 app.get('/music/radio/radio1', function (req, res) {
-  exec('/home/pi/work/radio/radio.sh 1');
+  exec('USE_MPG123=1 BTDEVICE=" " /home/pi/work/radio/radio.sh 1');
   res.render("index", {stat_msg: ""});
 });
 app.get('/music/radio/radio2', function (req, res) {
-  exec('/home/pi/work/radio/radio.sh 2');
+  exec('USE_MPG123=1 BTDEVICE=" " /home/pi/work/radio/radio.sh 2');
   res.render("index", {stat_msg: ""});
 });
 app.get('/music/radio/radio3', function (req, res) {
-  exec('/home/pi/work/radio/radio.sh 3');
+  exec('USE_MPG123=1 BTDEVICE=" " /home/pi/work/radio/radio.sh 3');
   res.render("index", {stat_msg: ""});
 });
 app.get('/music/radio/radio4', function (req, res) {
-  exec('/home/pi/work/radio/radio.sh 4');
+  exec('USE_MPG123=1 BTDEVICE=" " /home/pi/work/radio/radio.sh 4');
   res.render("index", {stat_msg: ""});
 });
 app.get('/music/radio/radio5', function (req, res) {
-  exec('/home/pi/work/radio/radio.sh 5');
+  exec('USE_MPG123=1 BTDEVICE=" " /home/pi/work/radio/radio.sh 5');
   res.render("index", {stat_msg: ""});
 });
 app.get('/music/radio/radio6', function (req, res) {
-  exec('/home/pi/work/radio/radio.sh 6');
+  exec('USE_MPG123=1 BTDEVICE=" " /home/pi/work/radio/radio.sh 6');
   res.render("index", {stat_msg: ""});
 });
 app.get('/music/bluetoothctl/conn', function (req, res) {
@@ -212,6 +212,10 @@ app.get('/remote/raspberrypi/soundbar/bluetooth', function (req, res) {
 });
 app.get('/remote/raspberrypi/soundbar/pairing', function (req, res) {
   exec('wget http://192.168.1.23:3001/soundbar/pairing -O /dev/null -o /dev/null');
+  res.render("index", {stat_msg: ""});
+});
+app.get('/remote/raspberrypi/soundbar/sound', function (req, res) {
+  exec('wget http://192.168.1.23:3001/soundbar/sound -O /dev/null -o /dev/null');
   res.render("index", {stat_msg: ""});
 });
 // Light
