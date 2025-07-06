@@ -185,6 +185,10 @@ app.get('/music/radio/radio6', function (req, res) {
   exec('USE_MPG123=1 BTDEVICE=" " /home/pi/work/radio/radio.sh 6');
   res.redirect('/');
 });
+app.get('/music/radio/radiostop', function (req, res) {
+  exec('USE_MPG123=1 BTDEVICE=" " /home/pi/work/radio/radio.sh -1');
+  res.redirect('/');
+});
 app.get('/music/bluetoothctl/conn', function (req, res) {
   const result = execSync('/home/pi/work/radio/conn_btspeaker.sh 6C:5A:B5:70:F8:2A conn').toString();
   res.render("index", {stat_msg: result});
