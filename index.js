@@ -185,6 +185,10 @@ app.get('/music/radio/radio6', function (req, res) {
   exec('USE_MPG123=1 BTDEVICE=" " /home/pi/work/radio/radio.sh 6');
   res.redirect('/');
 });
+app.get('/music/radio/radio7', function (req, res) {
+  exec('USE_MPG123=1 BTDEVICE=" " /home/pi/work/radio/radio.sh 7');
+  res.redirect('/');
+});
 app.get('/music/radio/radiostop', function (req, res) {
   exec('USE_MPG123=1 BTDEVICE=" " /home/pi/work/radio/radio.sh -1');
   res.redirect('/');
@@ -224,6 +228,22 @@ app.get('/remote/raspberrypi/soundbar/sound', function (req, res) {
 });
 app.get('/remote/raspberrypi/soundbar/input', function (req, res) {
   exec('wget http://192.168.1.23:3001/soundbar/input -O /dev/null -o /dev/null');
+  res.redirect('/');
+});
+app.get('/remote/raspberrypi/soundbar/set', function (req, res) {
+  exec('wget http://192.168.1.23:3001/soundbar/set -O /dev/null -o /dev/null');
+  res.redirect('/');
+});
+app.get('/remote/raspberrypi/soundbar/next', function (req, res) {
+  exec('wget http://192.168.1.23:3001/soundbar/next -O /dev/null -o /dev/null');
+  res.redirect('/');
+});
+app.get('/remote/raspberrypi/soundbar/prev', function (req, res) {
+  exec('wget http://192.168.1.23:3001/soundbar/prev -O /dev/null -o /dev/null');
+  res.redirect('/');
+});
+app.get('/remote/raspberrypi/soundbar/ok', function (req, res) {
+  exec('wget http://192.168.1.23:3001/soundbar/ok -O /dev/null -o /dev/null');
   res.redirect('/');
 });
 // Light
